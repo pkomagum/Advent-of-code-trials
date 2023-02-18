@@ -52,17 +52,19 @@ int fuelcomputer (int x)
 //main function
 int main(void)
 {
-    
+    //inputs
     int fuel1 = 12;
     int fuel2 = 14;
     int fuel3 = 1969;
     int fuel4 = 100756;
 
+    //result variables
     int result1 = 0;
     int result2 = 0;
     int result3 = 0;
     int result4 = 0;
     
+    //Total sum of fuels
     int sumofresults = 0;
 
     result1 = fuelcomputer (fuel1);
