@@ -59,23 +59,26 @@ int main(void)
     int fuel4 = 100756;
 
     int result1 = 0;
+    int result2 = 0;
+    int result3 = 0;
+    int result4 = 0;
     
+    int sumofresults = 0;
 
     result1 = fuelcomputer (fuel1);
-    printf ("Final result = %d\n", result1);
-    result1 = 0;
+    printf (" Result 1 = %d \n", result1);
 
-    result1 = fuelcomputer (fuel2);
-    printf ("Final result = %d\n", result1);
-    result1 = 0;
+    result2 = fuelcomputer (fuel2);
+    printf (" Result 2 = %d \n", result2);
 
-    result1 = fuelcomputer (fuel3);
-    printf ("Final result = %d\n", result1);
-    result1 = 0;
+    result3 = fuelcomputer (fuel3);
+    printf (" Result 3 = %d\n", result3);
     
-    result1 = fuelcomputer (fuel4);
-    printf ("Final result = %d\n", result1);
+    result4 = fuelcomputer (fuel4);
+    printf ("Result 4 = %d\n", result4);
 
+    sumofresults = result1 + result2 + result3 + result4;
+    printf (" Sum of results is %d \n", sumofresults);
 
     return 0;
 }
