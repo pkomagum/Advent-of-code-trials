@@ -52,8 +52,38 @@ int fuelcomputer (int x)
 //main function
 int main(void)
 {
-    //inputs
-    int fuel1 = 12;
+    //Variable to handle the number of inputs that the user is wants to input
+    int numVar;
+    
+    printf("How many fuel variables would you want to input? ");
+    scanf("%d", &numVar);
+
+
+    // Declare and array that will hold these number of variables
+    int fuel[numVar];
+
+
+    // The for loop that will prompt the user toinput each variable
+    for (int i = 0; i < numVar; i++) {
+
+        printf("Enter fuel number %d: ", i+1); //The plus one is placed there so that the counting system starts at 1 rather than 0
+        scanf("%d", &fuel[i]);
+
+    }
+
+
+    // This section prints out the variables so that the user can see the variables that were entered
+    printf("To confirm these were the fuel variables entered:\n");
+    for (int i = 0; i < numVar; i++) {
+    
+        printf("Variable %d = %d\n", i+1, fuel[i]);
+
+    }
+
+
+    return 0;
+
+    /*
     int fuel2 = 14;
     int fuel3 = 1969;
     int fuel4 = 100756;
@@ -83,4 +113,5 @@ int main(void)
     printf (" Sum of results is %d \n", sumofresults);
 
     return 0;
+    */
 }
