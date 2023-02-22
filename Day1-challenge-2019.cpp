@@ -52,66 +52,79 @@ int fuelcomputer (int x)
 //main function
 int main(void)
 {
+
     //Variable to handle the number of inputs that the user is wants to input
     int numVar;
     
-    printf("How many fuel variables would you want to input? ");
+    printf("\n");// Added to make the output better to read
+    printf(" How many mass variables would you want to input? \n");
     scanf("%d", &numVar);
+    printf("\n");// Added to make the output better to read
 
 
     // Declare and array that will hold these number of variables
-    int fuel[numVar];
+    int mass[numVar];
 
 
     // The for loop that will prompt the user toinput each variable
     for (int i = 0; i < numVar; i++) {
 
-        printf("Enter fuel number %d: ", i+1); //The plus one is placed there so that the counting system starts at 1 rather than 0
-        scanf("%d", &fuel[i]);
+        printf("Enter mass number %d: \n", i+1); //The plus one is placed there so that the counting system starts at 1 rather than 0
+        scanf("%d", & mass[i]);
 
     }
 
 
     // This section prints out the variables so that the user can see the variables that were entered
-    printf("To confirm these were the fuel variables entered:\n");
+    printf("\nTo confirm these were the mass variables entered:\n");
     for (int i = 0; i < numVar; i++) {
     
-        printf("Variable %d = %d\n", i+1, fuel[i]);
+        printf("Mass %d = %d \n", i+1, mass[i]);
+    
+
+    }
+
+    // The inputs seem to be working great, time to concentrate on the computation of the program.
+
+    int results[numVar]; //this will handle the computation for each fuel variable
+    int totalres = 0; // this will handle the total of all the results
+
+    // This is  the for loop that does the computation, more like the processer of the program
+    for (int i = 0; i < numVar; i++) {
+
+        results[i] = fuelcomputer (mass[i]);
+
+    }
+
+    printf("\n");// Added to make the output better to read
+    printf("These are the mass and fuel allocations:\n");
+
+/*
+    // This will print out all the results as integers for now, later on i will make it print strings
+    for (int i = 0; i < numVar; i++){
+        
+        printf("Mass %d = %d \n", i+1, results[i]);
+
+    }
+*/
+
+    // This will print out all the results as integers for now, later on i will make it print strings
+    for (int i = 0; i < numVar; i++){
+        
+        printf(" %d \n", results[i]);
 
     }
 
 
-    return 0;
+    // This part of the code calculates the the sum of the variables in the array results
+    for (int i = 0; i < numVar; i++){
 
-    /*
-    int fuel2 = 14;
-    int fuel3 = 1969;
-    int fuel4 = 100756;
+       totalres = totalres + results[i]; 
 
-    //result variables
-    int result1 = 0;
-    int result2 = 0;
-    int result3 = 0;
-    int result4 = 0;
-    
-    //Total sum of fuels
-    int sumofresults = 0;
-
-    result1 = fuelcomputer (fuel1);
-    printf (" Result 1 = %d \n", result1);
-
-    result2 = fuelcomputer (fuel2);
-    printf (" Result 2 = %d \n", result2);
-
-    result3 = fuelcomputer (fuel3);
-    printf (" Result 3 = %d\n", result3);
-    
-    result4 = fuelcomputer (fuel4);
-    printf ("Result 4 = %d\n", result4);
-
-    sumofresults = result1 + result2 + result3 + result4;
-    printf (" Sum of results is %d \n", sumofresults);
+    }
+    printf("\n");// Added to make the output better to read
+    printf("The total sum of fuel needed for all the masses is: %d \n", totalres);
+    printf("\n");// Added to make the output better to read
 
     return 0;
-    */
 }
